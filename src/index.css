@@ -1,1 +1,1520 @@
-@import "tailwindcss";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#fbfaf3;
+    color:#173d2d;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+    height:74px;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    box-shadow:0 3px 20px rgba(0,0,0,.06);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:#e7f3df;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:27px;
+}
+
+.logo-name{
+    font-size:21px;
+    font-weight:800;
+    color:#075d39;
+}
+
+.logo-name span{
+    color:#7b4218;
+}
+
+.logo-tag{
+    font-size:9px;
+    color:#6b776f;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    font-size:13px;
+    font-weight:500;
+    padding:28px 0;
+    position:relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#087345;
+    font-weight:700;
+}
+
+.nav-links a.active::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:17px;
+
+    height:2px;
+
+    background:#087345;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:9px;
+    align-items:center;
+}
+
+.language{
+    border:0;
+    background:none;
+    font-size:12px;
+}
+
+.btn{
+    border-radius:25px;
+    padding:10px 19px;
+
+    font-size:12px;
+    font-weight:700;
+
+    border:1px solid #087345;
+
+    background:white;
+    color:#087345;
+}
+
+.btn-green{
+    background:#087345;
+    color:white;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:500px;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,245,207,.18),
+        rgba(255,248,220,.08)
+    ),
+    url("");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,248,220,.05),
+        rgba(255,248,220,.05)
+    );
+}
+
+.hero-container{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.hero-content{
+
+    text-align:center;
+
+    margin-right:250px;
+}
+
+.hero-title{
+
+    font-family:"Kalam",cursive;
+
+    font-size:67px;
+
+    line-height:.95;
+
+    font-weight:700;
+
+    color:#075b38;
+}
+
+.hero-title .brown{
+    color:#81420f;
+}
+
+.hero-subtitle{
+
+    font-family:"Kalam",cursive;
+
+    font-size:30px;
+
+    color:#613719;
+
+    margin-top:12px;
+}
+
+.hero-content h1{
+
+    font-size:17px;
+
+    margin-top:13px;
+}
+
+.hero-content p{
+
+    margin-top:8px;
+
+    font-size:12px;
+
+    font-weight:600;
+}
+
+.hero-content p span{
+    color:#8e9992;
+    padding:0 8px;
+}
+
+.hero-buttons{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:14px;
+}
+
+.hero-btn{
+
+    border-radius:28px;
+
+    padding:14px 25px;
+
+    border:1px solid #087345;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+.hero-btn.green{
+
+    background:#087345;
+    color:white;
+}
+
+.hero-btn.white{
+
+    background:white;
+    color:#087345;
+}
+
+
+/* =====================================================
+   MANDI MINI CARD
+===================================================== */
+
+.mandi-mini{
+
+    width:270px;
+
+    position:absolute;
+
+    right:0;
+
+    top:20px;
+
+    background:rgba(255,255,255,.95);
+
+    border-radius:20px;
+
+    padding:17px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    backdrop-filter:blur(10px);
+}
+
+.mini-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:11px;
+
+    margin-bottom:8px;
+}
+
+.mini-header a{
+
+    color:#087345;
+
+    font-size:9px;
+}
+
+.mandi-item{
+
+    display:grid;
+
+    grid-template-columns:38px 1fr auto;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 0;
+
+    border-bottom:1px solid #edf0ea;
+}
+
+.crop-icon{
+    font-size:28px;
+}
+
+.mandi-item strong{
+
+    display:block;
+
+    font-size:11px;
+}
+
+.mandi-item small{
+
+    color:#737e77;
+
+    font-size:9px;
+}
+
+.price-up{
+    color:#078448;
+    font-size:10px;
+}
+
+.price-down{
+    color:#e54c45;
+    font-size:10px;
+}
+
+.nearby{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding-top:12px;
+
+    font-size:10px;
+}
+
+.nearby div{
+    flex:1;
+}
+
+.nearby small{
+    display:block;
+    color:#777;
+    margin-top:3px;
+}
+
+
+/* =====================================================
+   JOURNEY
+===================================================== */
+
+.journey{
+
+    padding:40px 5%;
+
+    text-align:center;
+
+    background:#fbfaf2;
+}
+
+.section-title{
+
+    font-family:"Kalam",cursive;
+
+    color:#075d39;
+
+    font-size:31px;
+}
+
+.section-subtitle{
+
+    font-size:12px;
+
+    color:#6c776f;
+
+    margin-top:3px;
+}
+
+.journey-grid{
+
+    max-width:1150px;
+
+    margin:25px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:17px;
+}
+
+.journey-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    text-align:left;
+
+    box-shadow:0 7px 22px rgba(26,61,45,.10);
+
+    transition:.3s;
+}
+
+.journey-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 14px 30px rgba(26,61,45,.15);
+}
+
+.journey-image{
+
+    height:115px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:58px;
+}
+
+.j1{background:linear-gradient(135deg,#badc9e,#edc277)}
+.j2{background:linear-gradient(135deg,#72af51,#e3d27a)}
+.j3{background:linear-gradient(135deg,#abd8c8,#e6f0d5)}
+.j4{background:linear-gradient(135deg,#d5904c,#f2c992)}
+.j5{background:linear-gradient(135deg,#72aa50,#efca76)}
+
+.number{
+
+    display:inline-block;
+
+    margin:10px 13px 2px;
+
+    padding:4px 9px;
+
+    background:#087345;
+
+    color:white;
+
+    border-radius:15px;
+
+    font-size:9px;
+
+    font-weight:700;
+}
+
+.journey-card h3{
+
+    font-family:"Kalam",cursive;
+
+    font-size:21px;
+
+    margin:2px 13px;
+}
+
+.journey-card p{
+
+    font-size:10px;
+
+    color:#6b756f;
+
+    line-height:1.5;
+
+    margin:3px 13px 15px;
+}
+
+
+/* =====================================================
+   WHY
+===================================================== */
+
+.why{
+
+    padding:35px 5%;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #ffffff,
+        #f1f4e9
+    );
+}
+
+.why-inner{
+
+    max-width:1150px;
+
+    margin:auto;
+}
+
+.why h2{
+
+    font-family:"Kalam",cursive;
+
+    font-size:30px;
+
+    color:#075d39;
+}
+
+.why p{
+
+    font-size:11px;
+
+    color:#68756e;
+}
+
+.features{
+
+    margin-top:18px;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:10px;
+}
+
+.feature{
+
+    background:#ffffffc9;
+
+    border:1px solid #e5eae1;
+
+    border-radius:15px;
+
+    padding:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+}
+
+.feature-icon{
+
+    min-width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:#e4f3e7;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#087345;
+
+    font-size:18px;
+}
+
+.feature strong{
+
+    display:block;
+
+    font-size:10px;
+}
+
+.feature small{
+
+    display:block;
+
+    color:#78827d;
+
+    font-size:8px;
+
+    margin-top:3px;
+}
+
+
+/* =====================================================
+   SMART MANDI
+===================================================== */
+
+.smart-mandi{
+
+    padding:65px 5%;
+
+    background:
+    linear-gradient(
+        180deg,
+        #f4f7ed,
+        #edf3e7
+    );
+}
+
+.smart-header{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:35px;
+}
+
+.eyebrow{
+
+    color:#087345;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1.5px;
+}
+
+.smart-header h2{
+
+    font-family:"Kalam",cursive;
+
+    font-size:38px;
+
+    line-height:1.1;
+
+    margin-top:7px;
+}
+
+.smart-header h2 span{
+
+    color:#087345;
+}
+
+.smart-description{
+
+    max-width:610px;
+
+    font-size:12px;
+
+    color:#68756e;
+
+    line-height:1.6;
+
+    margin-top:10px;
+}
+
+
+/* =====================================================
+   CALCULATOR
+===================================================== */
+
+.calculator{
+
+    width:310px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:19px;
+
+    box-shadow:0 12px 35px rgba(30,70,50,.12);
+}
+
+.calculator label{
+
+    display:block;
+
+    font-size:9px;
+
+    color:#637068;
+
+    font-weight:800;
+
+    margin-bottom:5px;
+}
+
+.calculator select,
+.calculator input{
+
+    width:100%;
+
+    height:40px;
+
+    border:1px solid #dce5dc;
+
+    border-radius:10px;
+
+    padding:0 12px;
+
+    outline:none;
+
+    background:white;
+
+    margin-bottom:12px;
+}
+
+.qty-box{
+
+    position:relative;
+}
+
+.qty-box span{
+
+    position:absolute;
+
+    right:12px;
+
+    top:11px;
+
+    color:#77827c;
+
+    font-size:10px;
+}
+
+.calculate-btn{
+
+    width:100%;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#087345;
+
+    color:white;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+.calculate-btn:hover{
+
+    background:#065b36;
+}
+
+
+/* =====================================================
+   RECOMMENDATION
+===================================================== */
+
+.recommendation{
+
+    max-width:1150px;
+
+    margin:30px auto 18px;
+
+    padding:19px 22px;
+
+    background:linear-gradient(
+        90deg,
+        #e4f5e7,
+        #f4faed
+    );
+
+    border:1px solid #c9e3cd;
+
+    border-radius:19px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.trophy{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:#087345;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+}
+
+.recommendation-content{
+
+    flex:1;
+}
+
+.recommendation-content small{
+
+    color:#64816c;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+.recommendation-content h3{
+
+    font-size:19px;
+
+    margin-top:3px;
+}
+
+.recommendation-content p{
+
+    color:#6c7771;
+
+    font-size:10px;
+
+    margin-top:3px;
+}
+
+.net-value{
+
+    text-align:right;
+}
+
+.net-value small{
+
+    display:block;
+
+    color:#6c786f;
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+.net-value strong{
+
+    display:block;
+
+    color:#087345;
+
+    font-size:25px;
+
+    margin-top:3px;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-container{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 28px rgba(25,60,45,.09);
+}
+
+.table-header{
+
+    padding:16px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom:1px solid #edf0e9;
+}
+
+.table-header h3{
+
+    font-size:14px;
+}
+
+.table-header p{
+
+    color:#78817b;
+
+    font-size:9px;
+
+    margin-top:3px;
+}
+
+.location{
+
+    background:#f0f6ed;
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    font-size:9px;
+
+    color:#587066;
+}
+
+.table-scroll{
+    overflow-x:auto;
+}
+
+table{
+
+    width:100%;
+
+    min-width:800px;
+
+    border-collapse:collapse;
+}
+
+th{
+
+    text-align:left;
+
+    padding:12px 15px;
+
+    background:#f1f6ed;
+
+    color:#5e7066;
+
+    font-size:9px;
+}
+
+td{
+
+    padding:14px 15px;
+
+    border-bottom:1px solid #edf0e9;
+
+    font-size:10px;
+}
+
+tr.best{
+
+    background:#f0faef;
+}
+
+.mandi-name{
+
+    font-weight:800;
+
+    color:#194633;
+}
+
+.transport{
+
+    color:#d16c2d;
+}
+
+.net{
+
+    color:#087345;
+
+    font-weight:800;
+}
+
+.badge{
+
+    background:#087345;
+
+    color:white;
+
+    border-radius:15px;
+
+    padding:5px 8px;
+
+    font-size:8px;
+
+    font-weight:800;
+}
+
+
+/* =====================================================
+   MARKETPLACE
+===================================================== */
+
+.marketplace{
+
+    padding:50px 5%;
+
+    background:#fffdf6;
+}
+
+.market-header{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+}
+
+.market-header h2{
+
+    font-family:"Kalam",cursive;
+
+    font-size:31px;
+
+    color:#075d39;
+}
+
+.market-header p{
+
+    font-family:"Kalam",cursive;
+
+    font-size:15px;
+
+    color:#68756e;
+}
+
+.products{
+
+    max-width:1150px;
+
+    margin:20px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+}
+
+.product{
+
+    background:white;
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    box-shadow:0 7px 22px rgba(30,60,45,.09);
+}
+
+.product-image{
+
+    height:120px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:65px;
+
+    position:relative;
+}
+
+.wheat{background:#d7a13c}
+.tomato{background:#e47750}
+.potato{background:#cba272}
+.onion{background:#c88998}
+
+.heart{
+
+    position:absolute;
+
+    top:9px;
+    right:9px;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:15px;
+}
+
+.product-info{
+
+    padding:12px;
+}
+
+.product-info h3{
+
+    font-size:14px;
+}
+
+.product-price{
+
+    font-size:12px;
+
+    font-weight:800;
+
+    margin-top:4px;
+}
+
+.product-price small{
+
+    color:#777;
+
+    font-weight:400;
+}
+
+.product-location{
+
+    font-size:9px;
+
+    color:#747e78;
+
+    margin-top:5px;
+}
+
+.verified{
+
+    display:inline-block;
+
+    background:#e6f5e8;
+
+    color:#117546;
+
+    border-radius:15px;
+
+    padding:4px 8px;
+
+    margin-top:8px;
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+
+    min-height:190px;
+
+    padding:30px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        90deg,
+        #efd078,
+        #f8e7b2
+    );
+}
+
+.cta h2{
+
+    font-family:"Kalam",cursive;
+
+    font-size:31px;
+}
+
+.cta p{
+
+    font-size:11px;
+
+    color:#536258;
+
+    max-width:390px;
+
+    margin:4px 0 13px;
+}
+
+.stats{
+
+    background:#087345;
+
+    color:white;
+
+    border-radius:18px;
+
+    padding:18px 25px;
+
+    display:flex;
+
+    gap:27px;
+}
+
+.stat{
+
+    text-align:center;
+
+    min-width:90px;
+}
+
+.stat strong{
+
+    display:block;
+
+    font-size:17px;
+}
+
+.stat small{
+
+    display:block;
+
+    font-size:8px;
+
+    margin-top:2px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    min-height:72px;
+
+    background:#053b2d;
+
+    color:white;
+
+    padding:12px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.footer-brand{
+
+    font-size:18px;
+}
+
+.footer-brand small{
+
+    display:block;
+
+    font-size:8px;
+
+    opacity:.7;
+
+    margin-left:25px;
+}
+
+.footer-flow{
+
+    font-size:10px;
+}
+
+.footer-slogan{
+
+    font-family:"Kalam",cursive;
+
+    font-size:16px;
+
+    text-align:right;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1050px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-content{
+        margin-right:0;
+    }
+
+    .journey-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .features{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:750px){
+
+    .navbar{
+        padding:0 15px;
+    }
+
+    .language{
+        display:none;
+    }
+
+    .hero{
+        min-height:650px;
+    }
+
+    .hero-container{
+        align-items:flex-start;
+        padding-top:50px;
+    }
+
+    .hero-title{
+        font-size:52px;
+    }
+
+    .hero-subtitle{
+        font-size:24px;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-btn{
+        width:230px;
+    }
+
+    .mandi-mini{
+
+        top:auto;
+        bottom:20px;
+
+        right:50%;
+
+        transform:translateX(50%);
+
+        width:90%;
+    }
+
+    .journey-grid,
+    .features{
+
+        grid-template-columns:1fr 1fr;
+    }
+
+    .smart-header{
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+    .calculator{
+
+        width:100%;
+    }
+
+    .recommendation{
+
+        flex-wrap:wrap;
+    }
+
+    .net-value{
+
+        text-align:left;
+
+        margin-left:65px;
+    }
+
+    .cta{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+    }
+
+    .stats{
+
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+    }
+
+    footer{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        text-align:center;
+    }
+
+    .footer-slogan{
+        text-align:center;
+    }
+}
+
+@media(max-width:480px){
+
+    .journey-grid,
+    .features,
+    .products{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero-title{
+        font-size:44px;
+    }
+
+    .smart-header h2{
+        font-size:30px;
+    }
+
+    .market-header{
+
+        align-items:flex-start;
+
+        gap:10px;
+
+        flex-direction:column;
+    }
+
+}
